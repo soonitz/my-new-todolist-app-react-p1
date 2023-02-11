@@ -3,9 +3,9 @@ import Items from "./components/Items";
 import Header from "./components/Header";
 import CreateItem from "./components/CreateItem";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import dotenv from "dotenv";
+import dotenv from "dotenv";
 
-// dotenv.config();
+dotenv.config();
 
 function App() {
   return (
