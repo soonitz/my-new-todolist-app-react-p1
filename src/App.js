@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Items from "./components/Items";
+import Header from "./components/Header";
+import CreateItem from "./components/CreateItem";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import dotenv from "dotenv";
+
+// dotenv.config();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Items />} />
+          <Route path="/todo" element={<Items endpoint="?status=todo" />} />
+          <Route path="/done" element={<Items endpoint="?status=done" />} />
+          <Route path="/create_item" element={<CreateItem />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
