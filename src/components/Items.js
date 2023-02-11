@@ -5,7 +5,7 @@ export default function Items({ endpoint = "" }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/items${endpoint}`)
+    fetch(`${process.env.REACT_APP_BACKEND_API_URI}/items${endpoint}`)
       .then((res) => {
         return res.json();
       })
