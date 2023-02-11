@@ -25,7 +25,7 @@ export default function CreateItem() {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    fetch(`${process.env.REACT_APP_BACKEND_API_URI}/items`, {
+    fetch(`http://localhost:3001/items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

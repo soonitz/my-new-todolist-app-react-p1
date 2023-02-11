@@ -4,7 +4,7 @@ export default function Item({ item: i }) {
   const [item, setItem] = useState(i);
 
   const toggle = () => {
-    fetch(`${process.env.REACT_APP_BACKEND_API_URI}/items/${item.id}`, {
+    fetch(`http://localhost:3001/items/${item.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
